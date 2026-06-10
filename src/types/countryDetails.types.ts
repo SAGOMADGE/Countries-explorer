@@ -1,11 +1,11 @@
 export interface CountryDetail {
-  cca3: string;
-  name: { common: string; official: string };
-  flags: { svg: string; alt: string };
-  capital: string[];
-  region: string;
-  timezones: string[];
-  borders: string[];
+  cca3: string; // code
+  name: { common: string; official: string }; // name of the country
+  flags: { svg: string; alt: string }; // flag in svg format
+  capital: string[]; // array where string capital in it
+  region: string; //europe for example
+  timezones: string[]; // URC+3 for example
+  borders: string[]; // codes of nearest countries
   languages: Record<string, string>; // ключ string - тут динамичен, поэтому Record
   currencies: Record<string, { name: string; symbol: string }>; // тоже самое и тут, только значение ключа не строка а объект
 }
