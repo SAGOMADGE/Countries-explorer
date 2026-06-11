@@ -1,4 +1,4 @@
-export interface CountryDetail {
+export interface CountryDetails {
   cca3: string; // code
   name: { common: string; official: string }; // name of the country
   flags: { svg: string; alt: string }; // flag in svg format
