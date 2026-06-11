@@ -24,16 +24,18 @@ function reducer(state: Country[], action: Action): Country[] {
     case 'ADD':
       return [...state, action.payload];
     case 'REMOVE':
-      return state.filter((Country) => Country.cca3 !== action.payload);
+      return state.filter((country) => country.cca3 !== action.payload);
     case 'CLEAR_ALL':
       return [];
   }
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const FavoritesContext = createContext<FavoritesContextType | null>(
   null
 );
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useFavoritesContext = () => {
   const context = useContext(FavoritesContext);
   if (!context)
