@@ -1,51 +1,55 @@
-/* Переменные для легкой кастомизации темы (уровень Стронг Джуна) */
 .navbar {
   --nav-bg: #ffffff;
   --nav-border: #e2e8f0;
   --text-main: #0f172a;
   --text-muted: #64748b;
-  --accent-color: #2563eb;
-  --accent-bg: #eff6ff;
+  --accent-color: #2563eb; /* Насыщенный синий */
   --transition-speed: 0.2s;
 
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Отступы между ссылками без использования старых margin-right */
-  padding: 1rem 2rem;
+  gap: 2rem;
+  padding: 0 2rem; /* Убираем вертикальный паддинг у навбара, высоту даем через ссылки */
+  height: 4rem; /* Фиксированная высота навбара — 64px */
   background-color: var(--nav-bg);
   border-bottom: 1px solid var(--nav-border);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
-/* Стилизация ссылок (NavLink в DOM становится тегом <a>) */
 .navbar a {
-  font-family: sans-serif; /* Замени на шрифт своего проекта */
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500; /* Толщина шрифта одинаковая и для обычного, и для активного состояния! */
   color: var(--text-muted);
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem; /* Скругление для приятного ховера */
-  transition:
-    color var(--transition-speed) ease,
-    background-color var(--transition-speed) ease;
+
+  height: 100%; /* Ссылка занимает всю высоту навбара */
+  display: flex;
+  align-items: center;
+  position: relative; /* КРИТИЧЕСКИ ВАЖНО для позиционирования линии */
+  padding: 0 0.25rem; /* Небольшие отступы по бокам */
+
+  transition: color var(--transition-speed) ease;
 }
 
-/* Состояние при наведении (Hover) */
+/* Ховер эффект для неактивных вкладок */
 .navbar a:hover {
   color: var(--text-main);
-  background-color: var(--nav-border);
 }
 
-/* Магия React Router: Стилизация активной ссылки */
-.navbar a.active {
+/* Состояние открытой (активной) вкладки */
+.navbar a:global(.active) {
   color: var(--accent-color);
-  background-color: var(--accent-bg);
-  font-weight: 600; /* Немного выделяем текст */
 }
 
-/* Доступность (Accessibility): Стилизация при навигации с клавиатуры через Tab */
-.navbar a:focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
+/* Магия: Создаем визуальный индикатор открытой вкладки через псевдоэлемент */
+.navbar a:global(.active)::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; /* Сажаем линию ровно на border-bottom навбара */
+  left: 0;
+  width: 100%; /* Линия растягивается ровно по ширине текста ссылки */
+  height: 3px; /* Толщина индикатора */
+  background-color: var(--accent-color);
+  border-radius: 3px 3px 0 0; /* Слегка скругляем верхние углы линии */
 }

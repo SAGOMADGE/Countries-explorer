@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 
 import { NavBar } from './NavBar/NavBar';
+
+import { Footer } from './Footer/Footer';
 
 export const Layout = () => {
   return (
@@ -12,9 +13,7 @@ export const Layout = () => {
         <Outlet />
       </main>
 
-      <footer>
-        <p>Copyright @ 2026 SAGOMADGE</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
