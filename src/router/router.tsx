@@ -4,11 +4,11 @@ import { Layout } from '@/components/Layout';
 
 import { NotFoundPage } from '@/components/NotFoundPage';
 
-import { HomePage } from '@/components/HomePage';
+import { HomePage } from '@/components/HomePage/HomePage';
 
 import { FavoritesPage } from '@/components/FavoritesPage';
 
-import { CountryPage } from '@/components/CountryPage';
+import { DetailsPage } from '@/components/DetailsPage/DetailsPage';
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'country/:cca3',
-        element: <CountryPage />,
+        element: <DetailsPage />,
       },
     ],
   },

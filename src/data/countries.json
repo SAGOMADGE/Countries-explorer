@@ -1,0 +1,852 @@
+[
+  {
+    "cca3": "DEU",
+    "name": { "common": "Germany", "official": "Federal Republic of Germany" },
+    "flags": {
+      "svg": "https://flagcdn.com/de.svg",
+      "alt": "The flag of Germany is composed of three equal horizontal bands of black, red and gold."
+    },
+    "capital": ["Berlin"],
+    "region": "Europe",
+    "population": 83240525,
+    "languages": { "deu": "German" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["AUT", "BEL", "CZE", "DNK", "FRA", "LUX", "NLD", "POL", "CHE"]
+  },
+  {
+    "cca3": "FRA",
+    "name": { "common": "France", "official": "French Republic" },
+    "flags": {
+      "svg": "https://flagcdn.com/fr.svg",
+      "alt": "The flag of France is composed of three equal vertical bands of blue, white and red."
+    },
+    "capital": ["Paris"],
+    "region": "Europe",
+    "population": 67391582,
+    "languages": { "fra": "French" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["AND", "BEL", "DEU", "ITA", "LUX", "MCO", "ESP", "CHE"]
+  },
+  {
+    "cca3": "ITA",
+    "name": { "common": "Italy", "official": "Italian Republic" },
+    "flags": {
+      "svg": "https://flagcdn.com/it.svg",
+      "alt": "The flag of Italy is composed of three equal vertical bands of green, white and red."
+    },
+    "capital": ["Rome"],
+    "region": "Europe",
+    "population": 59554023,
+    "languages": { "ita": "Italian" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["AUT", "FRA", "SMR", "SVN", "CHE", "VAT"]
+  },
+  {
+    "cca3": "ESP",
+    "name": { "common": "Spain", "official": "Kingdom of Spain" },
+    "flags": {
+      "svg": "https://flagcdn.com/es.svg",
+      "alt": "The flag of Spain is composed of three horizontal bands of red, yellow and red, with the national coat of arms on the yellow band."
+    },
+    "capital": ["Madrid"],
+    "region": "Europe",
+    "population": 47351567,
+    "languages": { "spa": "Spanish" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC", "UTC+01:00"],
+    "borders": ["AND", "FRA", "GIB", "PRT", "MAR"]
+  },
+  {
+    "cca3": "POL",
+    "name": { "common": "Poland", "official": "Republic of Poland" },
+    "flags": {
+      "svg": "https://flagcdn.com/pl.svg",
+      "alt": "The flag of Poland is composed of two equal horizontal bands of white and red."
+    },
+    "capital": ["Warsaw"],
+    "region": "Europe",
+    "population": 37950000,
+    "languages": { "pol": "Polish" },
+    "currencies": { "PLN": { "name": "Polish złoty", "symbol": "zł" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"]
+  },
+  {
+    "cca3": "GBR",
+    "name": {
+      "common": "United Kingdom",
+      "official": "United Kingdom of Great Britain and Northern Ireland"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/gb.svg",
+      "alt": "The flag of the United Kingdom features the Union Jack."
+    },
+    "capital": ["London"],
+    "region": "Europe",
+    "population": 67215293,
+    "languages": { "eng": "English" },
+    "currencies": { "GBP": { "name": "British pound", "symbol": "£" } },
+    "timezones": ["UTC"],
+    "borders": ["IRL"]
+  },
+  {
+    "cca3": "IRL",
+    "name": { "common": "Ireland", "official": "Republic of Ireland" },
+    "flags": {
+      "svg": "https://flagcdn.com/ie.svg",
+      "alt": "The flag of Ireland is composed of three equal vertical bands of green, white and orange."
+    },
+    "capital": ["Dublin"],
+    "region": "Europe",
+    "population": 4994724,
+    "languages": { "eng": "English", "gle": "Irish" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC"],
+    "borders": ["GBR"]
+  },
+  {
+    "cca3": "NLD",
+    "name": {
+      "common": "Netherlands",
+      "official": "Kingdom of the Netherlands"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/nl.svg",
+      "alt": "The flag of the Netherlands is composed of three equal horizontal bands of red, white and blue."
+    },
+    "capital": ["Amsterdam"],
+    "region": "Europe",
+    "population": 17533405,
+    "languages": { "nld": "Dutch" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC", "UTC-04:00"],
+    "borders": ["BEL", "DEU"]
+  },
+  {
+    "cca3": "CHE",
+    "name": { "common": "Switzerland", "official": "Swiss Confederation" },
+    "flags": {
+      "svg": "https://flagcdn.com/ch.svg",
+      "alt": "The flag of Switzerland is a red square with a white cross in the center."
+    },
+    "capital": ["Bern"],
+    "region": "Europe",
+    "population": 8654622,
+    "languages": { "fra": "French", "deu": "German", "ita": "Italian" },
+    "currencies": { "CHF": { "name": "Swiss franc", "symbol": "CHF" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["AUT", "FRA", "ITA", "LIE", "DEU"]
+  },
+  {
+    "cca3": "SWE",
+    "name": { "common": "Sweden", "official": "Kingdom of Sweden" },
+    "flags": {
+      "svg": "https://flagcdn.com/se.svg",
+      "alt": "The flag of Sweden is blue with a yellow cross."
+    },
+    "capital": ["Stockholm"],
+    "region": "Europe",
+    "population": 10353442,
+    "languages": { "swe": "Swedish" },
+    "currencies": { "SEK": { "name": "Swedish krona", "symbol": "kr" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["FIN", "NOR"]
+  },
+  {
+    "cca3": "RUS",
+    "name": { "common": "Russia", "official": "Russian Federation" },
+    "flags": {
+      "svg": "https://flagcdn.com/ru.svg",
+      "alt": "The flag of Russia is composed of three equal horizontal bands of white, blue and red."
+    },
+    "capital": ["Moscow"],
+    "region": "Europe",
+    "population": 144104080,
+    "languages": { "rus": "Russian" },
+    "currencies": { "RUB": { "name": "Russian ruble", "symbol": "₽" } },
+    "timezones": ["UTC+02:00", "UTC+12:00"],
+    "borders": [
+      "AZE",
+      "BLR",
+      "CHN",
+      "EST",
+      "FIN",
+      "GEO",
+      "KAZ",
+      "KOR",
+      "LVA",
+      "LTU",
+      "MNG",
+      "NOR",
+      "POL",
+      "UKR"
+    ]
+  },
+  {
+    "cca3": "UKR",
+    "name": { "common": "Ukraine", "official": "Ukraine" },
+    "flags": {
+      "svg": "https://flagcdn.com/ua.svg",
+      "alt": "The flag of Ukraine is composed of two equal horizontal bands of blue and yellow."
+    },
+    "capital": ["Kyiv"],
+    "region": "Europe",
+    "population": 43733762,
+    "languages": { "ukr": "Ukrainian" },
+    "currencies": { "UAH": { "name": "Ukrainian hryvnia", "symbol": "₴" } },
+    "timezones": ["UTC+02:00"],
+    "borders": ["BLR", "HUN", "MDA", "POL", "ROU", "RUS", "SVK"]
+  },
+  {
+    "cca3": "TUR",
+    "name": { "common": "Turkey", "official": "Republic of Türkiye" },
+    "flags": {
+      "svg": "https://flagcdn.com/tr.svg",
+      "alt": "The flag of Turkey is red with a white star and crescent."
+    },
+    "capital": ["Ankara"],
+    "region": "Asia",
+    "population": 85279553,
+    "languages": { "tur": "Turkish" },
+    "currencies": { "TRY": { "name": "Turkish lira", "symbol": "₺" } },
+    "timezones": ["UTC+03:00"],
+    "borders": ["ARM", "AZE", "BGR", "GEO", "GRC", "IRN", "IRQ", "SYR"]
+  },
+  {
+    "cca3": "JPN",
+    "name": { "common": "Japan", "official": "Japan" },
+    "flags": {
+      "svg": "https://flagcdn.com/jp.svg",
+      "alt": "The flag of Japan is white with a red circle in the center."
+    },
+    "capital": ["Tokyo"],
+    "region": "Asia",
+    "population": 125836021,
+    "languages": { "jpn": "Japanese" },
+    "currencies": { "JPY": { "name": "Japanese yen", "symbol": "¥" } },
+    "timezones": ["UTC+09:00"],
+    "borders": []
+  },
+  {
+    "cca3": "CHN",
+    "name": { "common": "China", "official": "People's Republic of China" },
+    "flags": {
+      "svg": "https://flagcdn.com/cn.svg",
+      "alt": "The flag of China is red with five yellow stars in the upper left corner."
+    },
+    "capital": ["Beijing"],
+    "region": "Asia",
+    "population": 1402112000,
+    "languages": { "zho": "Chinese" },
+    "currencies": { "CNY": { "name": "Chinese yuan", "symbol": "¥" } },
+    "timezones": ["UTC+08:00"],
+    "borders": [
+      "AFG",
+      "BTN",
+      "MMR",
+      "HKG",
+      "IND",
+      "KAZ",
+      "NPL",
+      "KOR",
+      "KGZ",
+      "LAO",
+      "MAC",
+      "MNG",
+      "PAK",
+      "RUS",
+      "TJK",
+      "VNM"
+    ]
+  },
+  {
+    "cca3": "IND",
+    "name": { "common": "India", "official": "Republic of India" },
+    "flags": {
+      "svg": "https://flagcdn.com/in.svg",
+      "alt": "The flag of India is composed of three equal horizontal bands of saffron, white and green with a navy blue wheel in the center."
+    },
+    "capital": ["New Delhi"],
+    "region": "Asia",
+    "population": 1380004385,
+    "languages": { "eng": "English", "hin": "Hindi" },
+    "currencies": { "INR": { "name": "Indian rupee", "symbol": "₹" } },
+    "timezones": ["UTC+05:30"],
+    "borders": ["AFG", "BGD", "BTN", "MMR", "CHN", "NPL", "PAK", "LKA"]
+  },
+  {
+    "cca3": "KOR",
+    "name": { "common": "South Korea", "official": "Republic of Korea" },
+    "flags": {
+      "svg": "https://flagcdn.com/kr.svg",
+      "alt": "The flag of South Korea is white with a red and blue taegeuk in the center."
+    },
+    "capital": ["Seoul"],
+    "region": "Asia",
+    "population": 51780579,
+    "languages": { "kor": "Korean" },
+    "currencies": { "KRW": { "name": "South Korean won", "symbol": "₩" } },
+    "timezones": ["UTC+09:00"],
+    "borders": ["PRK"]
+  },
+  {
+    "cca3": "THA",
+    "name": { "common": "Thailand", "official": "Kingdom of Thailand" },
+    "flags": {
+      "svg": "https://flagcdn.com/th.svg",
+      "alt": "The flag of Thailand is composed of horizontal bands of red, white, blue, white and red."
+    },
+    "capital": ["Bangkok"],
+    "region": "Asia",
+    "population": 69799978,
+    "languages": { "tha": "Thai" },
+    "currencies": { "THB": { "name": "Thai baht", "symbol": "฿" } },
+    "timezones": ["UTC+07:00"],
+    "borders": ["MMR", "KHM", "LAO", "MYS"]
+  },
+  {
+    "cca3": "VNM",
+    "name": {
+      "common": "Vietnam",
+      "official": "Socialist Republic of Vietnam"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/vn.svg",
+      "alt": "The flag of Vietnam is red with a large yellow star in the center."
+    },
+    "capital": ["Hanoi"],
+    "region": "Asia",
+    "population": 97338579,
+    "languages": { "vie": "Vietnamese" },
+    "currencies": { "VND": { "name": "Vietnamese đồng", "symbol": "₫" } },
+    "timezones": ["UTC+07:00"],
+    "borders": ["KHM", "CHN", "LAO"]
+  },
+  {
+    "cca3": "ARE",
+    "name": {
+      "common": "United Arab Emirates",
+      "official": "United Arab Emirates"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/ae.svg",
+      "alt": "The flag of the United Arab Emirates has a vertical red band and three horizontal bands of green, white and black."
+    },
+    "capital": ["Abu Dhabi"],
+    "region": "Asia",
+    "population": 9890400,
+    "languages": { "ara": "Arabic" },
+    "currencies": {
+      "AED": { "name": "United Arab Emirates dirham", "symbol": "د.إ" }
+    },
+    "timezones": ["UTC+04:00"],
+    "borders": ["OMN", "SAU"]
+  },
+  {
+    "cca3": "ISR",
+    "name": { "common": "Israel", "official": "State of Israel" },
+    "flags": {
+      "svg": "https://flagcdn.com/il.svg",
+      "alt": "The flag of Israel is white with a blue Star of David between two horizontal blue stripes."
+    },
+    "capital": ["Jerusalem"],
+    "region": "Asia",
+    "population": 9216900,
+    "languages": { "heb": "Hebrew", "ara": "Arabic" },
+    "currencies": { "ILS": { "name": "Israeli new shekel", "symbol": "₪" } },
+    "timezones": ["UTC+02:00"],
+    "borders": ["EGY", "JOR", "LBN", "SYR"]
+  },
+  {
+    "cca3": "GEO",
+    "name": { "common": "Georgia", "official": "Georgia" },
+    "flags": {
+      "svg": "https://flagcdn.com/ge.svg",
+      "alt": "The flag of Georgia is white with a red cross and four smaller red crosses in each quadrant."
+    },
+    "capital": ["Tbilisi"],
+    "region": "Asia",
+    "population": 3714000,
+    "languages": { "kat": "Georgian" },
+    "currencies": { "GEL": { "name": "Georgian lari", "symbol": "₾" } },
+    "timezones": ["UTC+04:00"],
+    "borders": ["ARM", "AZE", "RUS", "TUR"]
+  },
+  {
+    "cca3": "USA",
+    "name": {
+      "common": "United States",
+      "official": "United States of America"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/us.svg",
+      "alt": "The flag of the United States of America is composed of thirteen horizontal stripes of red and white, with a blue rectangle in the canton containing fifty white stars."
+    },
+    "capital": ["Washington, D.C."],
+    "region": "Americas",
+    "population": 329484123,
+    "languages": { "eng": "English" },
+    "currencies": { "USD": { "name": "United States dollar", "symbol": "$" } },
+    "timezones": ["UTC-12:00", "UTC-05:00", "UTC-04:00"],
+    "borders": ["CAN", "MEX"]
+  },
+  {
+    "cca3": "CAN",
+    "name": { "common": "Canada", "official": "Canada" },
+    "flags": {
+      "svg": "https://flagcdn.com/ca.svg",
+      "alt": "The flag of Canada is composed of a red maple leaf on a white square, flanked by two red vertical bands."
+    },
+    "capital": ["Ottawa"],
+    "region": "Americas",
+    "population": 38005238,
+    "languages": { "eng": "English", "fra": "French" },
+    "currencies": { "CAD": { "name": "Canadian dollar", "symbol": "$" } },
+    "timezones": ["UTC-08:00", "UTC-05:00"],
+    "borders": ["USA"]
+  },
+  {
+    "cca3": "MEX",
+    "name": { "common": "Mexico", "official": "United Mexican States" },
+    "flags": {
+      "svg": "https://flagcdn.com/mx.svg",
+      "alt": "The flag of Mexico is composed of three vertical bands of green, white and red, with the national coat of arms in the center."
+    },
+    "capital": ["Mexico City"],
+    "region": "Americas",
+    "population": 128932753,
+    "languages": { "spa": "Spanish" },
+    "currencies": { "MXN": { "name": "Mexican peso", "symbol": "$" } },
+    "timezones": ["UTC-08:00", "UTC-06:00"],
+    "borders": ["BLZ", "GTM", "USA"]
+  },
+  {
+    "cca3": "BRA",
+    "name": { "common": "Brazil", "official": "Federative Republic of Brazil" },
+    "flags": {
+      "svg": "https://flagcdn.com/br.svg",
+      "alt": "The flag of Brazil is green with a yellow rhombus and a blue globe with stars."
+    },
+    "capital": ["Brasília"],
+    "region": "Americas",
+    "population": 212559417,
+    "languages": { "por": "Portuguese" },
+    "currencies": { "BRL": { "name": "Brazilian real", "symbol": "R$" } },
+    "timezones": ["UTC-05:00", "UTC-04:00", "UTC-03:00", "UTC-02:00"],
+    "borders": ["ARG", "BOL", "COL", "GUY", "PRY", "PER", "SUR", "URY", "VEN"]
+  },
+  {
+    "cca3": "ARG",
+    "name": { "common": "Argentina", "official": "Argentine Republic" },
+    "flags": {
+      "svg": "https://flagcdn.com/ar.svg",
+      "alt": "The flag of Argentina is composed of three horizontal bands of light blue, white and light blue with a sun in the center."
+    },
+    "capital": ["Buenos Aires"],
+    "region": "Americas",
+    "population": 45376763,
+    "languages": { "spa": "Spanish" },
+    "currencies": { "ARS": { "name": "Argentine peso", "symbol": "$" } },
+    "timezones": ["UTC-03:00"],
+    "borders": ["BOL", "BRA", "CHL", "PRY", "URY"]
+  },
+  {
+    "cca3": "CHL",
+    "name": { "common": "Chile", "official": "Republic of Chile" },
+    "flags": {
+      "svg": "https://flagcdn.com/cl.svg",
+      "alt": "The flag of Chile is composed of a white star on a blue square in the upper hoist-side corner, with two horizontal bands of white and red."
+    },
+    "capital": ["Santiago"],
+    "region": "Americas",
+    "population": 19116209,
+    "languages": { "spa": "Spanish" },
+    "currencies": { "CLP": { "name": "Chilean peso", "symbol": "$" } },
+    "timezones": ["UTC-06:00", "UTC-04:00"],
+    "borders": ["ARG", "BOL", "PER"]
+  },
+  {
+    "cca3": "COL",
+    "name": { "common": "Colombia", "official": "Republic of Colombia" },
+    "flags": {
+      "svg": "https://flagcdn.com/co.svg",
+      "alt": "The flag of Colombia is composed of three horizontal bands of yellow, blue and red."
+    },
+    "capital": ["Bogotá"],
+    "region": "Americas",
+    "population": 50882884,
+    "languages": { "spa": "Spanish" },
+    "currencies": { "COP": { "name": "Colombian peso", "symbol": "$" } },
+    "timezones": ["UTC-05:00"],
+    "borders": ["BRA", "ECU", "PAN", "PER", "VEN"]
+  },
+  {
+    "cca3": "PER",
+    "name": { "common": "Peru", "official": "Republic of Peru" },
+    "flags": {
+      "svg": "https://flagcdn.com/pe.svg",
+      "alt": "The flag of Peru is composed of three vertical bands of red, white and red, with the national coat of arms on the white band."
+    },
+    "capital": ["Lima"],
+    "region": "Americas",
+    "population": 32971846,
+    "languages": { "spa": "Spanish", "quz": "Quechua" },
+    "currencies": { "PEN": { "name": "Peruvian sol", "symbol": "S/." } },
+    "timezones": ["UTC-05:00"],
+    "borders": ["BOL", "BRA", "CHL", "COL", "ECU"]
+  },
+  {
+    "cca3": "EGY",
+    "name": { "common": "Egypt", "official": "Arab Republic of Egypt" },
+    "flags": {
+      "svg": "https://flagcdn.com/eg.svg",
+      "alt": "The flag of Egypt is composed of three horizontal bands of red, white and black, with the national emblem in the center."
+    },
+    "capital": ["Cairo"],
+    "region": "Africa",
+    "population": 102334404,
+    "languages": { "ara": "Arabic" },
+    "currencies": { "EGP": { "name": "Egyptian pound", "symbol": "£" } },
+    "timezones": ["UTC+02:00"],
+    "borders": ["ISR", "LBY", "SDN"]
+  },
+  {
+    "cca3": "NGA",
+    "name": { "common": "Nigeria", "official": "Federal Republic of Nigeria" },
+    "flags": {
+      "svg": "https://flagcdn.com/ng.svg",
+      "alt": "The flag of Nigeria is composed of two vertical bands of green and a vertical band of white in the center."
+    },
+    "capital": ["Abuja"],
+    "region": "Africa",
+    "population": 206139589,
+    "languages": { "eng": "English" },
+    "currencies": { "NGN": { "name": "Nigerian naira", "symbol": "₦" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["BEN", "CMR", "TCD", "NER"]
+  },
+  {
+    "cca3": "ZAF",
+    "name": {
+      "common": "South Africa",
+      "official": "Republic of South Africa"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/za.svg",
+      "alt": "The flag of South Africa has a central black triangle with green Y-shape and bands of red, white, blue and gold."
+    },
+    "capital": ["Pretoria", "Cape Town", "Bloemfontein"],
+    "region": "Africa",
+    "population": 59308690,
+    "languages": { "afr": "Afrikaans", "eng": "English", "zul": "Zulu" },
+    "currencies": { "ZAR": { "name": "South African rand", "symbol": "R" } },
+    "timezones": ["UTC+02:00"],
+    "borders": ["BWA", "LSO", "MOZ", "NAM", "SWZ", "ZWE"]
+  },
+  {
+    "cca3": "KEN",
+    "name": { "common": "Kenya", "official": "Republic of Kenya" },
+    "flags": {
+      "svg": "https://flagcdn.com/ke.svg",
+      "alt": "The flag of Kenya is composed of horizontal bands of black, red and green with a Maasai shield and spears."
+    },
+    "capital": ["Nairobi"],
+    "region": "Africa",
+    "population": 53771296,
+    "languages": { "eng": "English", "swa": "Swahili" },
+    "currencies": { "KES": { "name": "Kenyan shilling", "symbol": "Sh" } },
+    "timezones": ["UTC+03:00"],
+    "borders": ["ETH", "SOM", "SSD", "TZA", "UGA"]
+  },
+  {
+    "cca3": "MAR",
+    "name": { "common": "Morocco", "official": "Kingdom of Morocco" },
+    "flags": {
+      "svg": "https://flagcdn.com/ma.svg",
+      "alt": "The flag of Morocco is red with a green pentagram in the center."
+    },
+    "capital": ["Rabat"],
+    "region": "Africa",
+    "population": 36910560,
+    "languages": { "ara": "Arabic", "ber": "Berber" },
+    "currencies": { "MAD": { "name": "Moroccan dirham", "symbol": "د.م." } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["DZA", "ESH", "ESP"]
+  },
+  {
+    "cca3": "ETH",
+    "name": {
+      "common": "Ethiopia",
+      "official": "Federal Democratic Republic of Ethiopia"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/et.svg",
+      "alt": "The flag of Ethiopia is composed of three horizontal bands of green, yellow and red, with a blue circle and yellow star in the center."
+    },
+    "capital": ["Addis Ababa"],
+    "region": "Africa",
+    "population": 114963588,
+    "languages": { "amh": "Amharic" },
+    "currencies": { "ETB": { "name": "Ethiopian birr", "symbol": "Br" } },
+    "timezones": ["UTC+03:00"],
+    "borders": ["DJI", "ERI", "KEN", "SOM", "SSD", "SDN"]
+  },
+  {
+    "cca3": "AUS",
+    "name": { "common": "Australia", "official": "Commonwealth of Australia" },
+    "flags": {
+      "svg": "https://flagcdn.com/au.svg",
+      "alt": "The flag of Australia has the Union Jack in the canton and a large white star beneath it, with the Southern Cross on the right."
+    },
+    "capital": ["Canberra"],
+    "region": "Oceania",
+    "population": 25687041,
+    "languages": { "eng": "English" },
+    "currencies": { "AUD": { "name": "Australian dollar", "symbol": "$" } },
+    "timezones": [
+      "UTC+05:00",
+      "UTC+06:30",
+      "UTC+07:00",
+      "UTC+08:00",
+      "UTC+09:30",
+      "UTC+10:00",
+      "UTC+10:30",
+      "UTC+11:30"
+    ],
+    "borders": []
+  },
+  {
+    "cca3": "NZL",
+    "name": { "common": "New Zealand", "official": "New Zealand" },
+    "flags": {
+      "svg": "https://flagcdn.com/nz.svg",
+      "alt": "The flag of New Zealand has the Union Jack in the canton and four red stars with white borders to the right."
+    },
+    "capital": ["Wellington"],
+    "region": "Oceania",
+    "population": 5084300,
+    "languages": { "eng": "English", "mri": "Māori" },
+    "currencies": { "NZD": { "name": "New Zealand dollar", "symbol": "$" } },
+    "timezones": ["UTC-11:00", "UTC+12:00", "UTC+12:45", "UTC+13:00"],
+    "borders": []
+  },
+  {
+    "cca3": "PRT",
+    "name": { "common": "Portugal", "official": "Portuguese Republic" },
+    "flags": {
+      "svg": "https://flagcdn.com/pt.svg",
+      "alt": "The flag of Portugal is divided into green and red, with the national coat of arms centered on the dividing line."
+    },
+    "capital": ["Lisbon"],
+    "region": "Europe",
+    "population": 10305564,
+    "languages": { "por": "Portuguese" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC-01:00", "UTC"],
+    "borders": ["ESP"]
+  },
+  {
+    "cca3": "GRC",
+    "name": { "common": "Greece", "official": "Hellenic Republic" },
+    "flags": {
+      "svg": "https://flagcdn.com/gr.svg",
+      "alt": "The flag of Greece has nine horizontal stripes of blue and white with a white cross on a blue square in the canton."
+    },
+    "capital": ["Athens"],
+    "region": "Europe",
+    "population": 10423054,
+    "languages": { "ell": "Greek" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC+02:00"],
+    "borders": ["ALB", "BGR", "TUR", "MKD"]
+  },
+  {
+    "cca3": "NOR",
+    "name": { "common": "Norway", "official": "Kingdom of Norway" },
+    "flags": {
+      "svg": "https://flagcdn.com/no.svg",
+      "alt": "The flag of Norway is red with a blue Scandinavian cross outlined in white."
+    },
+    "capital": ["Oslo"],
+    "region": "Europe",
+    "population": 5379475,
+    "languages": { "nob": "Norwegian" },
+    "currencies": { "NOK": { "name": "Norwegian krone", "symbol": "kr" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["FIN", "SWE", "RUS"]
+  },
+  {
+    "cca3": "FIN",
+    "name": { "common": "Finland", "official": "Republic of Finland" },
+    "flags": {
+      "svg": "https://flagcdn.com/fi.svg",
+      "alt": "The flag of Finland is white with a blue Nordic cross."
+    },
+    "capital": ["Helsinki"],
+    "region": "Europe",
+    "population": 5530719,
+    "languages": { "fin": "Finnish", "swe": "Swedish" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC+02:00"],
+    "borders": ["NOR", "SWE", "RUS"]
+  },
+  {
+    "cca3": "AUT",
+    "name": { "common": "Austria", "official": "Republic of Austria" },
+    "flags": {
+      "svg": "https://flagcdn.com/at.svg",
+      "alt": "The flag of Austria is composed of three equal horizontal bands of red, white and red."
+    },
+    "capital": ["Vienna"],
+    "region": "Europe",
+    "population": 8917205,
+    "languages": { "deu": "German" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"]
+  },
+  {
+    "cca3": "CZE",
+    "name": { "common": "Czechia", "official": "Czech Republic" },
+    "flags": {
+      "svg": "https://flagcdn.com/cz.svg",
+      "alt": "The flag of Czechia is composed of two equal horizontal bands of white and red with a blue triangle on the hoist side."
+    },
+    "capital": ["Prague"],
+    "region": "Europe",
+    "population": 10698896,
+    "languages": { "ces": "Czech" },
+    "currencies": { "CZK": { "name": "Czech koruna", "symbol": "Kč" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["AUT", "DEU", "POL", "SVK"]
+  },
+  {
+    "cca3": "HUN",
+    "name": { "common": "Hungary", "official": "Hungary" },
+    "flags": {
+      "svg": "https://flagcdn.com/hu.svg",
+      "alt": "The flag of Hungary is composed of three equal horizontal bands of red, white and green."
+    },
+    "capital": ["Budapest"],
+    "region": "Europe",
+    "population": 9749763,
+    "languages": { "hun": "Hungarian" },
+    "currencies": { "HUF": { "name": "Hungarian forint", "symbol": "Ft" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["AUT", "HRV", "ROU", "SRB", "SVK", "SVN", "UKR"]
+  },
+  {
+    "cca3": "BEL",
+    "name": { "common": "Belgium", "official": "Kingdom of Belgium" },
+    "flags": {
+      "svg": "https://flagcdn.com/be.svg",
+      "alt": "The flag of Belgium is composed of three vertical bands of black, yellow and red."
+    },
+    "capital": ["Brussels"],
+    "region": "Europe",
+    "population": 11555997,
+    "languages": { "nld": "Dutch", "fra": "French", "deu": "German" },
+    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
+    "timezones": ["UTC+01:00"],
+    "borders": ["FRA", "DEU", "LUX", "NLD"]
+  },
+  {
+    "cca3": "DNK",
+    "name": { "common": "Denmark", "official": "Kingdom of Denmark" },
+    "flags": {
+      "svg": "https://flagcdn.com/dk.svg",
+      "alt": "The flag of Denmark is red with a white Scandinavian cross."
+    },
+    "capital": ["Copenhagen"],
+    "region": "Europe",
+    "population": 5831404,
+    "languages": { "dan": "Danish" },
+    "currencies": { "DKK": { "name": "Danish krone", "symbol": "kr" } },
+    "timezones": ["UTC-04:00", "UTC-03:00", "UTC-01:00", "UTC", "UTC+01:00"],
+    "borders": ["DEU"]
+  },
+  {
+    "cca3": "PAK",
+    "name": {
+      "common": "Pakistan",
+      "official": "Islamic Republic of Pakistan"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/pk.svg",
+      "alt": "The flag of Pakistan is green with a white vertical band and a white crescent and star in the center."
+    },
+    "capital": ["Islamabad"],
+    "region": "Asia",
+    "population": 220892331,
+    "languages": { "eng": "English", "urd": "Urdu" },
+    "currencies": { "PKR": { "name": "Pakistani rupee", "symbol": "₨" } },
+    "timezones": ["UTC+05:00"],
+    "borders": ["AFG", "CHN", "IND", "IRN"]
+  },
+  {
+    "cca3": "IDN",
+    "name": { "common": "Indonesia", "official": "Republic of Indonesia" },
+    "flags": {
+      "svg": "https://flagcdn.com/id.svg",
+      "alt": "The flag of Indonesia is composed of two equal horizontal bands of red and white."
+    },
+    "capital": ["Jakarta"],
+    "region": "Asia",
+    "population": 273523615,
+    "languages": { "ind": "Indonesian" },
+    "currencies": { "IDR": { "name": "Indonesian rupiah", "symbol": "Rp" } },
+    "timezones": ["UTC+07:00", "UTC+08:00", "UTC+09:00"],
+    "borders": ["TLS", "MYS", "PNG"]
+  },
+  {
+    "cca3": "PHL",
+    "name": {
+      "common": "Philippines",
+      "official": "Republic of the Philippines"
+    },
+    "flags": {
+      "svg": "https://flagcdn.com/ph.svg",
+      "alt": "The flag of the Philippines has a white equilateral triangle with a sun and three stars, beside horizontal bands of blue and red."
+    },
+    "capital": ["Manila"],
+    "region": "Asia",
+    "population": 109581078,
+    "languages": { "eng": "English", "fil": "Filipino" },
+    "currencies": { "PHP": { "name": "Philippine peso", "symbol": "₱" } },
+    "timezones": ["UTC+08:00"],
+    "borders": []
+  },
+  {
+    "cca3": "SAU",
+    "name": { "common": "Saudi Arabia", "official": "Kingdom of Saudi Arabia" },
+    "flags": {
+      "svg": "https://flagcdn.com/sa.svg",
+      "alt": "The flag of Saudi Arabia is green with white Arabic text and a white sword."
+    },
+    "capital": ["Riyadh"],
+    "region": "Asia",
+    "population": 34813871,
+    "languages": { "ara": "Arabic" },
+    "currencies": { "SAR": { "name": "Saudi riyal", "symbol": "ر.س" } },
+    "timezones": ["UTC+03:00"],
+    "borders": ["IRQ", "JOR", "KWT", "OMN", "QAT", "ARE", "YEM"]
+  },
+  {
+    "cca3": "ROU",
+    "name": { "common": "Romania", "official": "Romania" },
+    "flags": {
+      "svg": "https://flagcdn.com/ro.svg",
+      "alt": "The flag of Romania is composed of three vertical bands of blue, yellow and red."
+    },
+    "capital": ["Bucharest"],
+    "region": "Europe",
+    "population": 19237691,
+    "languages": { "ron": "Romanian" },
+    "currencies": { "RON": { "name": "Romanian leu", "symbol": "lei" } },
+    "timezones": ["UTC+02:00"],
+    "borders": ["BGR", "HUN", "MDA", "SRB", "UKR"]
+  }
+]

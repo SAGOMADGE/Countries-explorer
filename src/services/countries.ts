@@ -1,20 +1,19 @@
-import { request } from './api';
-
 import { Country } from '@/types/country.types';
 import { CountryDetails } from '@/types/countryDetails.types';
 
-const URL_FOR_ALL_COUNTRIES =
-  'https://restcountries.com/v3.1/all?fields=cca3,name,flags,capital,region,population';
+import countriesData from '@/data/countries.json';
 
-export const getAllCountries = (signal?: AbortSignal) =>
-  request<Country[]>(URL_FOR_ALL_COUNTRIES, signal);
+export const getAllCountries = (signal?: AbortSignal): Promise<Country[]> =>
+  Promise.resolve(countriesData as Country[]);
 
-export const getCountryByCode = (code: string, signal?: AbortSignal) =>
-  request<CountryDetails>(
-    `https://restcountries.com/v3.1/alpha/${code}?fields=cca3,name,flags,capital,region,timezones,borders,languages,currencies`,
-    signal
-  );
-
+export const getCountryByCode = (
+  code: string,
+  signal?: AbortSignal
+): Promise<CountryDetails> => {
+  const country = countriesData.find((c) => c.cca3 === code);
+  if (!country) return Promise.reject(new Error('Country not found'));
+  return Promise.resolve(country as unknown as CountryDetails);
+};
 //  =============== ERRORS ==================== //
 /**
  * // 10.06.2026

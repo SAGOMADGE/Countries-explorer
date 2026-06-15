@@ -10,7 +10,7 @@ export interface Country {
     svg: string;
     alt: string;
   };
-  capital: string[]; // array, inside string of capital
+  capital: string[]; // array, inside string of a capital
   region: string; // EUROPE for example
   population: number; // how many people lives there
 }

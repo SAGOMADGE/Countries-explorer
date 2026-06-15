@@ -1,6 +1,7 @@
 export interface CountryDetails {
   cca3: string; // code
   name: { common: string; official: string }; // name of the country
+  population: number;
   flags: { svg: string; alt: string }; // flag in svg format
   capital: string[]; // array where string capital in it
   region: string; //europe for example
