@@ -14,10 +14,3 @@ export interface Country {
   region: string; // EUROPE for example
   population: number; // how many people lives there
 }
-
-export interface CountriesState {
-  // its for hook lifecycle
-  data: Country[] | null;
-  loading: boolean;
-  error: string | null;
-}
