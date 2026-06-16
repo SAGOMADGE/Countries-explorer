@@ -1,6 +1,7 @@
 import { useFetch } from '@/hooks/useFetch';
 
 import { Country } from '@/types/country.types';
+import { Region } from '@/types/region';
 
 import { getAllCountries } from '@/services/countries';
 import { useState } from 'react';
@@ -9,7 +10,7 @@ import { useFavoritesContext } from '@/context/FavoritesContext';
 
 import style from './HomePage.module.css';
 import { normalize } from '@/utils/normalize';
-import { Link } from 'react-router-dom';
+import { CountryCard } from '../CountryCard/CountryCard';
 
 export const HomePage = () => {
   const {
@@ -22,7 +23,9 @@ export const HomePage = () => {
 
   const debounceQuery = useDebounce(query, 400);
 
-  const { favorites, dispatch } = useFavoritesContext();
+  const [selectedRegion, setSelectedRegion] = useState<Region>('All');
+
+  const { favorites } = useFavoritesContext();
 
   if (loading) return <p className={style.loading}>Loading...</p>;
 
@@ -34,9 +37,12 @@ export const HomePage = () => {
   const filteredCountries = [...countries].filter((country) => {
     const isMatchingSearch =
       normalize(country.name.common).includes(normalize(debounceQuery)) ||
-      normalize(country.name.official).includes(debounceQuery);
+      normalize(country.name.official).includes(normalize(debounceQuery));
 
-    return isMatchingSearch;
+    const isMatchingCategory =
+      selectedRegion === 'All' || country.region === selectedRegion;
+
+    return isMatchingSearch && isMatchingCategory;
   });
 
   return (
@@ -48,6 +54,23 @@ export const HomePage = () => {
         placeholder="Поиск.."
       />
 
+      <select
+        value={selectedRegion}
+        onChange={(e) => setSelectedRegion(e.target.value as Region)}
+      >
+        <option value="All">All</option>
+
+        <option value="Africa">Africa</option>
+
+        <option value="Americas">Americas</option>
+
+        <option value="Asia">Asia</option>
+
+        <option value="Europe">Europe</option>
+
+        <option value="Oceania">Oceania</option>
+      </select>
+
       {filteredCountries && (
         <ul className={style.countriesList}>
           {filteredCountries.map((country) => {
@@ -56,33 +79,11 @@ export const HomePage = () => {
             );
 
             return (
-              <li key={country.cca3} className={style.countryEl}>
-                <Link to={`/country/${country.cca3}`}>
-                  <p>{country.name.official}</p>
-
-                  <p>{country.capital.join(', ')}</p>
-
-                  <p>{country.cca3}</p>
-
-                  <img src={country.flags.svg} alt={country.flags.alt} />
-
-                  <p>{country.region}</p>
-
-                  <p>{country.population}</p>
-                </Link>
-
-                <button
-                  onClick={() =>
-                    isFavorite
-                      ? dispatch({ type: 'REMOVE', payload: country.cca3 })
-                      : dispatch({ type: 'ADD', payload: country })
-                  }
-                >
-                  {isFavorite
-                    ? 'Удалить из избранного'
-                    : 'Добавить в избранное'}
-                </button>
-              </li>
+              <CountryCard
+                key={country.cca3}
+                country={country}
+                isFavorite={isFavorite}
+              />
             );
           })}
         </ul>
