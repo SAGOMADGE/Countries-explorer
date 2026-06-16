@@ -32,9 +32,7 @@ export const useFetch = <T,>(fetcher: (signal?: AbortSignal) => Promise<T>) => {
     load();
 
     return () => controller.abort();
-    // так как каждый рендер новый fetcher, тут можно не включать, эффект только при маунте запускается
-    //  eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetcher]);
 
   return { data, loading, error };
 };

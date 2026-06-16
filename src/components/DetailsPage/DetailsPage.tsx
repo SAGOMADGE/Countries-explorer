@@ -1,19 +1,22 @@
 import { useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { getCountryByCode } from '@/services/countries';
 import { CountryDetails } from '@/types/countryDetails.types';
 import { useFetch } from '@/hooks/useFetch';
+import { useCallback } from 'react';
 
 export const DetailsPage = () => {
   const { cca3 } = useParams();
 
   if (!cca3) throw new Error('cca3 is missing');
 
-  const {
-    data: country,
-    loading,
-    error,
-  } = useFetch<CountryDetails>((signal) => getCountryByCode(cca3, signal));
+  const fetcher = useCallback(
+    (signal?: AbortSignal) => getCountryByCode(cca3, signal),
+    [cca3]
+  );
+
+  const { data: country, loading, error } = useFetch<CountryDetails>(fetcher);
 
   if (loading) return <p>Loading...</p>;
 
@@ -45,6 +48,18 @@ export const DetailsPage = () => {
           </p>
         ))}
       </strong>
+
+      <ul style={{ display: 'flex', gap: '8px', listStyle: 'none' }}>
+        {country.borders.map((c) => (
+          <NavLink
+            to={`/country/${c}`}
+            key={c}
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
+            {c}
+          </NavLink>
+        ))}
+      </ul>
     </div>
   );
 };
