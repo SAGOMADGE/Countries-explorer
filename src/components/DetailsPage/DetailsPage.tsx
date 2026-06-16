@@ -8,11 +8,12 @@ import { CountryDetails } from '@/types/countryDetails.types';
 import { useFetch } from '@/hooks/useFetch';
 import { useCallback } from 'react';
 import { useFavoritesContext } from '@/context/FavoritesContext';
+import { ToggleButton } from '../toggleButton/ToggleButton';
 
 export const DetailsPage = () => {
   const { cca3 } = useParams();
 
-  const { favorites, dispatch } = useFavoritesContext();
+  const { favorites } = useFavoritesContext();
 
   const fetcher = useCallback(
     (signal?: AbortSignal) => {
@@ -69,15 +70,7 @@ export const DetailsPage = () => {
         ))}
       </ul>
 
-      <button
-        onClick={() =>
-          isFavorite
-            ? dispatch({ type: 'REMOVE', payload: country.cca3 })
-            : dispatch({ type: 'ADD', payload: country })
-        }
-      >
-        {isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
-      </button>
+      <ToggleButton isFavorite={isFavorite} country={country} />
     </div>
   );
 };

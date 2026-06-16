@@ -71,23 +71,19 @@ export const HomePage = () => {
         <option value="Oceania">Oceania</option>
       </select>
 
-      {filteredCountries && (
-        <ul className={style.countriesList}>
-          {filteredCountries.map((country) => {
-            const isFavorite = favorites.some(
-              (fav) => fav.cca3 === country.cca3
-            );
+      <ul className={style.countriesList}>
+        {filteredCountries.map((country) => {
+          const isFavorite = favorites.some((fav) => fav.cca3 === country.cca3);
 
-            return (
-              <CountryCard
-                key={country.cca3}
-                country={country}
-                isFavorite={isFavorite}
-              />
-            );
-          })}
-        </ul>
-      )}
+          return (
+            <CountryCard
+              key={country.cca3}
+              country={country}
+              isFavorite={isFavorite}
+            />
+          );
+        })}
+      </ul>
     </div>
   );
 };
