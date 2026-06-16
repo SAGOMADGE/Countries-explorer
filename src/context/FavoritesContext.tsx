@@ -5,6 +5,7 @@ import {
   Dispatch,
   ReactNode,
   useContext,
+  useEffect,
   useMemo,
   useReducer,
 } from 'react';
@@ -17,6 +18,13 @@ type Action =
 type FavoritesContextType = {
   favorites: Country[];
   dispatch: Dispatch<Action>;
+};
+
+const LS_KEY = 'favorites';
+
+const init = (initial: Country[]): Country[] => {
+  const stored = localStorage.getItem(LS_KEY);
+  return stored ? JSON.parse(stored) : initial;
 };
 
 function reducer(state: Country[], action: Action): Country[] {
@@ -44,14 +52,16 @@ export const useFavoritesContext = () => {
   return context;
 };
 
-const initialState: Country[] = [];
-
 interface FavoritesProviderProps {
   children: ReactNode;
 }
 
 export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
-  const [favorites, dispatch] = useReducer(reducer, initialState);
+  const [favorites, dispatch] = useReducer(reducer, [], init);
+
+  useEffect(() => {
+    localStorage.setItem(LS_KEY, JSON.stringify(favorites));
+  }, [favorites]);
 
   const value = useMemo(() => ({ favorites, dispatch }), [favorites]);
 
@@ -61,9 +71,3 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
     </FavoritesContext.Provider>
   );
 };
-
-// ============= ERRORS ============= //
-/** ---- 10.06.2026 ---------
- *
- * 1) Контекст хранит только state - dispatch потерян (Компоненты должны и читать список и изменять его). Без dispatch в контексте они не смогут добавлять и удалять.
- */

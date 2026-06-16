@@ -6,7 +6,7 @@ import { NotFoundPage } from '@/components/NotFoundPage';
 
 import { HomePage } from '@/components/HomePage/HomePage';
 
-import { FavoritesPage } from '@/components/FavoritesPage';
+import { FavoritesPage } from '@/components/FavoritesPage/FavoritesPage';
 
 import { DetailsPage } from '@/components/DetailsPage/DetailsPage';
 
