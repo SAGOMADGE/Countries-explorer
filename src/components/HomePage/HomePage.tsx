@@ -33,7 +33,6 @@ export const HomePage = () => {
 
   if (!countries) return null;
 
-  // при пустом инпуте рендерятся все страны, так как "" не занимает место, это пустота,пустая подстрока содержится в каждой строке
   const filteredCountries = [...countries].filter((country) => {
     const isMatchingSearch =
       normalize(country.name.common).includes(normalize(debounceQuery)) ||

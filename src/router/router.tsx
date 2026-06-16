@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import { Layout } from '@/components/Layout';
 
-import { NotFoundPage } from '@/components/NotFoundPage';
+import { NotFoundPage } from '@/components/NotFoundPage/NotFoundPage';
 
 import { HomePage } from '@/components/HomePage/HomePage';
 
