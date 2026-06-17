@@ -27,19 +27,19 @@ export const DetailsPage = () => {
 
   if (loading) return <p>Loading...</p>;
 
-  if (!country) return null;
-
   if (error) return <p className="error">{error}</p>;
+
+  if (!country) return null;
 
   const isFavorite = favorites.some((fav) => fav.cca3 === country.cca3);
 
   return (
-    <div className="countryPage">
+    <div className={style.countryPage}>
       <h1>{country.name.official}</h1>
 
       <p>Столица: {country.capital.join(', ')}</p>
 
-      <p>Население: {country.population}</p>
+      <p>Население: {country.population} человек</p>
 
       <p>Регион: {country.region}</p>
 
@@ -58,13 +58,10 @@ export const DetailsPage = () => {
         ))}
       </section>
 
-      <ul style={{ display: 'flex', gap: '8px', listStyle: 'none' }}>
+      <ul className={style.DetailsList}>
+        <span>Границы: </span>
         {country.borders.map((c) => (
-          <NavLink
-            to={`/country/${c}`}
-            key={c}
-            style={{ color: 'inherit', textDecoration: 'none' }}
-          >
+          <NavLink to={`/country/${c}`} key={c} className={style.bordersLink}>
             {c}
           </NavLink>
         ))}

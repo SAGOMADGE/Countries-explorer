@@ -1,0 +1,27 @@
+.notFoundPage {
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background-color: #f8fafc;
+  width: 100%;
+  max-width: 400px;
+  padding: var(--space-lg);
+  border-radius: var(--br-md);
+  font-size: 1rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text {
+  .info {
+    font-size: 1.1rem;
+  }
+}
+
+.goHomeText {
+  font-size: 1.4em;
+}

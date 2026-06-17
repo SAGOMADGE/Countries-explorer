@@ -13,9 +13,13 @@ export const FavoritesPage = () => {
     <div className={style.favoritesPageWrapper}>
       {emptyState && (
         <div className={style.emptyState}>
-          <p>Добавьте в избранные интересующие Вас страны!</p>
+          <p className={style.info}>
+            Добавьте в избранные интересующие Вас страны!
+          </p>
 
-          <NavLink to={`/`}>Перейти на главную</NavLink>
+          <NavLink className={style.link} to={`/`}>
+            Перейти на главную
+          </NavLink>
         </div>
       )}
 
@@ -25,15 +29,15 @@ export const FavoritesPage = () => {
             <Link to={`/country/${fav.cca3}`}>
               <p>{fav.name.official}</p>
 
-              <p>{fav.capital.join(', ')}</p>
+              <p>Столица: {fav.capital.join(', ')}</p>
 
-              <p>{fav.cca3}</p>
+              <p>Код страны: {fav.cca3}</p>
 
               <img src={fav.flags.svg} alt={fav.flags.alt} />
 
-              <p>{fav.region}</p>
+              <p>Регион: {fav.region}</p>
 
-              <p>{fav.population}</p>
+              <p>Население: {fav.population} человек</p>
             </Link>
 
             <button
