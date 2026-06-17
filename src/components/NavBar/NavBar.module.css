@@ -1,55 +1,33 @@
 .navbar {
   --nav-bg: #ffffff;
-  --nav-border: #e2e8f0;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --accent-color: #2563eb; /* Насыщенный синий */
-  --transition-speed: 0.2s;
-
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 0 2rem; /* Убираем вертикальный паддинг у навбара, высоту даем через ссылки */
-  height: 4rem; /* Фиксированная высота навбара — 64px */
+  --muted: #64748b;
+  gap: var(--space-md);
+  padding: 0 var(--space-md);
+  height: 64px;
   background-color: var(--nav-bg);
-  border-bottom: 1px solid var(--nav-border);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
-.navbar a {
-  font-family: sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500; /* Толщина шрифта одинаковая и для обычного, и для активного состояния! */
-  color: var(--text-muted);
-  text-decoration: none;
-
-  height: 100%; /* Ссылка занимает всю высоту навбара */
+.navbar > a {
+  color: var(--muted);
+  position: relative;
+  height: 100%;
   display: flex;
   align-items: center;
-  position: relative; /* КРИТИЧЕСКИ ВАЖНО для позиционирования линии */
-  padding: 0 0.25rem; /* Небольшие отступы по бокам */
-
-  transition: color var(--transition-speed) ease;
+  text-decoration: none;
 }
 
-/* Ховер эффект для неактивных вкладок */
-.navbar a:hover {
-  color: var(--text-main);
+.navbar > a:global(.active) {
+  color: var(--accent);
 }
 
-/* Состояние открытой (активной) вкладки */
-.navbar a:global(.active) {
-  color: var(--accent-color);
-}
-
-/* Магия: Создаем визуальный индикатор открытой вкладки через псевдоэлемент */
-.navbar a:global(.active)::after {
+.navbar > a:global(.active)::after {
   content: '';
-  position: absolute;
-  bottom: -1px; /* Сажаем линию ровно на border-bottom навбара */
+  height: 4px;
+  width: 100%;
+  bottom: -1px;
   left: 0;
-  width: 100%; /* Линия растягивается ровно по ширине текста ссылки */
-  height: 3px; /* Толщина индикатора */
-  background-color: var(--accent-color);
-  border-radius: 3px 3px 0 0; /* Слегка скругляем верхние углы линии */
+  background-color: var(--accent);
+  position: absolute;
+  border-radius: var(--br-sm) var(--br-sm) 0 0;
 }

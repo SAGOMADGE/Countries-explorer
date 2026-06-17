@@ -46,29 +46,31 @@ export const HomePage = () => {
 
   return (
     <div className={style.homePageWrapper}>
-      <input
-        className={style.searchInput}
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Поиск.."
-      />
+      <div className={style.inputsArea}>
+        <input
+          className={style.searchInput}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Поиск.."
+        />
 
-      <select
-        value={selectedRegion}
-        onChange={(e) => setSelectedRegion(e.target.value as Region)}
-      >
-        <option value="All">All</option>
+        <select
+          value={selectedRegion}
+          onChange={(e) => setSelectedRegion(e.target.value as Region)}
+        >
+          <option value="All">All</option>
 
-        <option value="Africa">Africa</option>
+          <option value="Africa">Africa</option>
 
-        <option value="Americas">Americas</option>
+          <option value="Americas">Americas</option>
 
-        <option value="Asia">Asia</option>
+          <option value="Asia">Asia</option>
 
-        <option value="Europe">Europe</option>
+          <option value="Europe">Europe</option>
 
-        <option value="Oceania">Oceania</option>
-      </select>
+          <option value="Oceania">Oceania</option>
+        </select>
+      </div>
 
       <ul className={style.countriesList}>
         {filteredCountries.map((country) => {

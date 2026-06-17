@@ -1,0 +1,32 @@
+.countryEl {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-lg);
+  font-size: var(--fs-md);
+  background-color: rgb(255, 255, 255);
+  padding: var(--space-sm) var(--space-md);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--br-sm);
+}
+
+.countryEl > a {
+  text-decoration: none;
+  color: var(--text-inverse);
+}
+
+.countryEl img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background-color: #f8fafc;
+  border-radius: var(--br-sm);
+  margin: var(--space-sm) 0px;
+}
+
+.countryEl button {
+  margin: var(--space-md) 0;
+  background-color: var(--accent);
+  color: var(--text-main);
+  border-radius: var(--br-sm);
+  padding: var(--space-sm);
+}
