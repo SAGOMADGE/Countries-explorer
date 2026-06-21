@@ -1,9 +1,8 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Исправляем возможную ошибку с __dirname в ES-модулях
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
@@ -11,7 +10,6 @@ export default defineConfig({
   server: {
     open: true,
     port: 3000,
-    // Важно для работы в локальной сети (например, потестить с телефона)
     host: true,
   },
   resolve: {
@@ -19,12 +17,18 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // Настройка CSS (полезно для будущего)
   css: {
-    devSourcemap: true, // Показывает в инспекторе браузера точное место в твоем .module.css
+    devSourcemap: true,
   },
   build: {
-    outDir: 'dist', // Папка для готового проекта (стандарт)
-    sourcemap: false, // Отключаем карты кода в билде для экономии веса
+    outDir: 'dist',
+    sourcemap: false,
+  },
+  // --- НОВОЕ ---
+  test: {
+    environment: 'jsdom', // эмулируем браузер — без этого нет document, window
+    globals: true, // можно писать describe/it/expect без импорта — как в Jest
+    setupFiles: './src/setupTests.ts', // файл который запускается ПЕРЕД каждым тест-файлом
+    css: true, // обрабатывать CSS Modules — без этого импорт .module.css падает
   },
 });

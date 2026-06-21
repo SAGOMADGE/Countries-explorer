@@ -44,6 +44,13 @@ export const HomePage = () => {
     return isMatchingSearch && isMatchingCategory;
   });
 
+  console.log(
+    'filteredCountries:',
+    filteredCountries.length,
+    'query:',
+    debounceQuery
+  );
+
   return (
     <div className={style.homePageWrapper}>
       <div className={style.inputsArea}>
@@ -72,19 +79,25 @@ export const HomePage = () => {
         </select>
       </div>
 
-      <ul className={style.countriesList}>
-        {filteredCountries.map((country) => {
-          const isFavorite = favorites.some((fav) => fav.cca3 === country.cca3);
+      {filteredCountries.length === 0 ? (
+        <p className={style.noResult}>Страна не найдена!</p>
+      ) : (
+        <ul className={style.countriesList}>
+          {filteredCountries.map((country) => {
+            const isFavorite = favorites.some(
+              (fav) => fav.cca3 === country.cca3
+            );
 
-          return (
-            <CountryCard
-              key={country.cca3}
-              country={country}
-              isFavorite={isFavorite}
-            />
-          );
-        })}
-      </ul>
+            return (
+              <CountryCard
+                key={country.cca3}
+                country={country}
+                isFavorite={isFavorite}
+              />
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 };

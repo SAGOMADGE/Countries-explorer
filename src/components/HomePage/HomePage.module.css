@@ -42,3 +42,9 @@
     width: 150px;
   }
 }
+
+.noResult {
+  color: var(--card-bg);
+  margin-top: var(--space-md);
+  font-size: 1.2em;
+}
