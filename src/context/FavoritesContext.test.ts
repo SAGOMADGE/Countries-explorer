@@ -38,4 +38,14 @@ describe('FavoritesContext reducer', () => {
     expect(nextState).toHaveLength(0);
     // toHaveLength - проверяет .length массива
   });
+
+  it('Если страна уже в Favorites, дважды она туда не добавится, дубликатов не будет', () => {
+    const state: Country[] = [mockCountry];
+
+    const nextState = reducer(state, { type: 'ADD', payload: mockCountry });
+
+    expect(nextState).toBe(state);
+
+    expect(nextState).toHaveLength(1);
+  });
 });

@@ -52,11 +52,23 @@ describe('CountryCard', () => {
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
-  it('кнопка показывает правильный текст когда isFavorite = true', () => {
+  it('текст кнопки при isFavorite = false равен "Добавить в избранное"', () => {
     renderWithProviders(
       <CountryCard country={mockCountry} isFavorite={true} />
     );
 
-    expect(screen.getByText('Удалить из избранного')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toHaveTextContent(
+      'Удалить из избранного'
+    );
+  });
+
+  it('текст кнопки при isFavorite = true показывает "Добавить в избранное" ', () => {
+    renderWithProviders(
+      <CountryCard country={mockCountry} isFavorite={false} />
+    );
+
+    expect(screen.getByRole('button')).toHaveTextContent(
+      'Добавить в избранное'
+    );
   });
 });
