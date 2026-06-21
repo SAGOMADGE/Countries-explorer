@@ -49,4 +49,19 @@ export default defineConfig([
       ...tseslint.configs.recommended.rules,
     },
   },
+  // Vitest globals для тест-файлов
+  {
+    files: ['**/*.{test,spec}.{ts,tsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        vi: 'readonly',
+      },
+    },
+  },
 ]);

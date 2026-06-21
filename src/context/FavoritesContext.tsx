@@ -27,10 +27,17 @@ const init = (initial: Country[]): Country[] => {
   return stored ? JSON.parse(stored) : initial;
 };
 
-function reducer(state: Country[], action: Action): Country[] {
+export function reducer(state: Country[], action: Action): Country[] {
   switch (action.type) {
-    case 'ADD':
+    case 'ADD': {
+      const isAlreadyFavorite = state.some(
+        (country) => country.cca3 === action.payload.cca3
+      );
+
+      if (isAlreadyFavorite) return state;
+
       return [...state, action.payload];
+    }
     case 'REMOVE':
       return state.filter((country) => country.cca3 !== action.payload);
     case 'CLEAR_ALL':
