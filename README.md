@@ -1,48 +1,70 @@
-# React + Vite Starter Template (Strong Junior+)
+# 🌍 Countries Explorer
 
-Индивидуальный инженерный шаблон для разработки масштабируемых Frontend-приложений. Настроен с учетом архитектурных стандартов и оптимизации рабочего процесса.
+Приложение с информацией о 52 странах мира. Каждую страну можно изучить подробнее, а интересующие — добавить в избранное.
 
-## 🚀 Стек технологий
+**[→ Живое демо](https://countries-explorer-blue.vercel.app/)**
 
-- **React 19** (Modern Context & Hooks)
-- **Vite** (Быстрая сборка и HMR)
-- **CSS Modules** (Изоляция стилей)
-- **Prettier** (Единый стандарт форматирования)
+---
 
-## 🏗 Архитектура и фичи
+![Countries Explorer — главная страница](./screenshots/desktop.png)
 
-- **Path Aliases (`@`)**: Настроены через `vite.config.js` и `jsconfig.json`. Импорты идут от папки `src/`.
-- **JSDoc Validation**: Включена проверка типов (`checkJs: true`). Пропсы компонентов документируются для IntelliSense.
-- **Структура компонентов**: Каждая сущность живет в своей директории (`Component/index.js`).
-- **Дизайн-система**: Глобальные CSS-переменные настроены в `src/index.css`.
+---
 
-## 📁 Структура проекта
+## Что умеет приложение
 
-- `src/api` — Логика запросов к API.
-- `src/components` — UI-компоненты (Atomic Design ready).
-- `src/hooks` — Кастомные React хуки.
-- `src/styles` — Общие стили и темы.
-- `src/utils` — Хелперы и форматирование данных.
+- Поиск страны по названию с дебаунсом — запрос не летит на каждый символ
+- Фильтрация по региону (Africa, Americas, Asia, Europe, Oceania)
+- Страница деталей с языками, валютами, границами и флагом
+- Избранное — сохраняется между сессиями через localStorage
+- Переход между соседними странами прямо со страницы деталей
 
-## 🛠 Установка и запуск
+---
 
-1. Клонировать репозиторий:
-   ```powershell
-   git clone <url-репозитория>
-   ```
-2. Установить зависимости:
+## Технические решения
 
-   ```powershell
-   npm install
-   ```
+**Сервисный слой**
+`App` не знает о fetch. Все запросы изолированы в `services/` — `api.ts` универсальный транспорт, `countries.ts` конкретные функции с типами. Поменять источник данных можно в одном месте.
 
-3. Отвязать репозиторий от шаблонного
-   ```powershell
-   Remove-Item -Recurse -Force .git
-   ```
+**useFetch с AbortController**
+Кастомный хук принимает `fetcher`-колбек вместо URL. Это позволяет передавать параметры через замыкание — например `cca3` для страницы деталей. AbortController отменяет запрос при размонтировании компонента.
 
-4.Запустить сервер разработки:
+**Context + useReducer + lazy init**
+Избранное управляется через `useReducer` с тремя экшенами: ADD, REMOVE, CLEAR_ALL. Начальное состояние читается из localStorage через функцию инициализации — один раз при монтировании, не на каждый рендер.
 
-```powershell
+**Тесты**
+Unit-тесты покрывают: утилиту `normalize`, reducer со всеми экшенами включая защиту от дублей, компоненты `CountryCard` и `FavoritesPage`, хук `useDebounce` с fake timers.
+
+---
+
+## Стек
+
+|                          |                            |
+| ------------------------ | -------------------------- |
+| React 19 + TypeScript    | UI и типизация             |
+| React Router v7          | Навигация, вложенные роуты |
+| Vitest + Testing Library | Unit-тесты                 |
+| CSS Modules              | Изолированные стили        |
+| Vite                     | Сборка                     |
+
+---
+
+## Запуск локально
+
+```bash
+git clone https://github.com/SAGOMADGE/Countries-explorer
+cd Countries-explorer
 npm install
+npm run dev
 ```
+
+Тесты:
+
+```bash
+npm test
+```
+
+---
+
+![Countries Explorer — страница деталей](./screenshots/details.png)
+
+![Countries Explorer — страница избранных](./screenshots/favorites.png)
