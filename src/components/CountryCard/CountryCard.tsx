@@ -20,7 +20,11 @@ export const CountryCard = ({ country, isFavorite }: CountryCardProps) => {
 
         <p>Код страны: {country.cca3}</p>
 
-        <img src={country.flags.svg} alt={country.flags.alt} />
+        <img
+          src={country.flags.svg}
+          alt={country.flags.alt}
+          className={style.flag}
+        />
 
         <p>Регион: {country.region}</p>
 

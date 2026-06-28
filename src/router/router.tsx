@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Layout } from '@/components/Layout';
+import { Layout } from '@/components/Layout/Layout';
 
 import { NotFoundPage } from '@/components/NotFoundPage/NotFoundPage';
 
