@@ -21,7 +21,7 @@
 
 .DetailsList > a {
   color: var(--accent);
-  margin-right: var(--space-xs);
+  margin-right: var(--space-sm);
 }
 
 .countryPage > button {
@@ -31,4 +31,10 @@
   color: var(--text-main);
   border-radius: var(--br-sm);
   padding: var(--space-sm);
+}
+
+.borderDisabled {
+  color: var(--text-muted);
+  margin-right: var(--space-sm);
+  cursor: not-allowed;
 }

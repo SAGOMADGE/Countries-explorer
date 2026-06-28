@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import style from './DetailsPage.module.css';
 
 import { getCountryByCode } from '@/services/countries';
+import { availableCountryCode } from '@/services/countries';
 import { CountryDetails } from '@/types/countryDetails.types';
 import { useFetch } from '@/hooks/useFetch';
 import { useCallback } from 'react';
@@ -60,11 +61,17 @@ export const DetailsPage = () => {
 
       <ul className={style.DetailsList}>
         <span>Границы: </span>
-        {country.borders.map((c) => (
-          <NavLink to={`/country/${c}`} key={c} className={style.bordersLink}>
-            {c}
-          </NavLink>
-        ))}
+        {country.borders.map((c) =>
+          availableCountryCode.has(c) ? (
+            <NavLink to={`/country/${c}`} key={c} className={style.bordersLink}>
+              {c}
+            </NavLink>
+          ) : (
+            <span key={c} className={style.borderDisabled}>
+              {c}
+            </span>
+          )
+        )}
       </ul>
 
       <ToggleButton isFavorite={isFavorite} country={country} />
