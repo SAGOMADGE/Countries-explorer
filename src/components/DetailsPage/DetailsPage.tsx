@@ -39,7 +39,7 @@ export const DetailsPage = () => {
 
       <p>Столица: {country.capital.join(', ')}</p>
 
-      <p>Население: {country.population} человек</p>
+      <p>Население: {country.population.toLocaleString('ru-RU')} человек</p>
 
       <p>Регион: {country.region}</p>
 

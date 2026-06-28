@@ -44,13 +44,6 @@ export const HomePage = () => {
     return isMatchingSearch && isMatchingCategory;
   });
 
-  console.log(
-    'filteredCountries:',
-    filteredCountries.length,
-    'query:',
-    debounceQuery
-  );
-
   return (
     <div className={style.homePageWrapper}>
       <div className={style.inputsArea}>

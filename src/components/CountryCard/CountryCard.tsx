@@ -24,7 +24,7 @@ export const CountryCard = ({ country, isFavorite }: CountryCardProps) => {
 
         <p>Регион: {country.region}</p>
 
-        <p>Население {country.population} человек</p>
+        <p>Население {country.population.toLocaleString('ru-RU')} человек</p>
       </Link>
 
       <ToggleButton isFavorite={isFavorite} country={country} />

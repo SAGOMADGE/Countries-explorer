@@ -37,7 +37,7 @@ export const FavoritesPage = () => {
 
               <p>Регион: {fav.region}</p>
 
-              <p>Население: {fav.population} человек</p>
+              <p>Население: {fav.population.toLocaleString('ru-RU')} человек</p>
             </Link>
 
             <button
