@@ -15,7 +15,6 @@ const mockCountry: Country = {
   population: 83000000,
 };
 
-// переменная renderWithProviders принимает ui - реакт элементы типа { key, children, types }, возвращает рендер функцию которая принимает обертку мемори роутер в обертке контекста в котором находится ui.. хмм
 const renderWithProviders = (ui: React.ReactElement) => {
   return render(
     <MemoryRouter>
@@ -40,8 +39,6 @@ describe('CountryCard', () => {
     );
 
     expect(screen.getByText(/Berlin/)).toBeInTheDocument();
-    // /Berlin/ - регулярное выражение, ищет подстроку внутри текста
-    // нужно потому что текст в компонент 'Столица: Berlin', а не просто 'Berlin'
   });
 
   it('отображает кнопку добавления в избранное', () => {

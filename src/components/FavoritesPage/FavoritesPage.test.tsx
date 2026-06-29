@@ -45,5 +45,3 @@ describe('FavoritesPage', () => {
     expect(screen.getByText('Federal Republic of Germany')).toBeInTheDocument();
   });
 });
-
-// а где мне тут внедрять local storage ? когда его прописывать и читать ?

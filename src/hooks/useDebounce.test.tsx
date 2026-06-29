@@ -3,30 +3,30 @@ import { useDebounce } from './useDebounce';
 
 describe('useDebounce', () => {
   beforeEach(() => {
-    vi.useFakeTimers(); // заменяем реальные таймеры на фейковые
+    vi.useFakeTimers();
   });
 
   afterEach(() => {
-    vi.useRealTimers(); // восстанавливаем реальные таймеры после каждого теста
+    vi.useRealTimers();
   });
 
   it('возвращает начальное значение сразу', () => {
     const { result } = renderHook(() => useDebounce('germany', 400));
-    // result.current - текущее возвращаемое значение хука
+
     expect(result.current).toBe('germany');
   });
 
   it('не обновляет значение до истечения delay', () => {
     const { result, rerender } = renderHook(
-      /*тестовый компонент -> */ ({ value }) => useDebounce(value, 400),
-      /* начальное значение value -> */ { initialProps: { value: 'germany' } }
+      ({ value }) => useDebounce(value, 400),
+      { initialProps: { value: 'germany' } }
     );
 
-    rerender({ value: 'france' }); // меняем входное значение
+    rerender({ value: 'france' });
 
-    vi.advanceTimersByTime(300); // перематываем 300мс - таймер еще не сработал
+    vi.advanceTimersByTime(300);
 
-    expect(result.current).toBe('germany'); // старое значение
+    expect(result.current).toBe('germany');
   });
 
   it('обновляет значение после истечения delay', () => {
@@ -38,7 +38,7 @@ describe('useDebounce', () => {
     rerender({ value: 'france' });
 
     act(() => {
-      vi.advanceTimersByTime(400); // таймер сработал
+      vi.advanceTimersByTime(400);
     });
 
     expect(result.current).toBe('france');

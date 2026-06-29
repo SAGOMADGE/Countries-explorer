@@ -2,7 +2,6 @@ import { Country } from '@/types/country.types';
 
 import { reducer } from './FavoritesContext';
 
-// Мок-данные - минимальный объект который удовлетворяет типу Country
 const mockCountry: Country = {
   cca3: 'DEU',
   name: { common: 'Germany', official: 'Federal Republic of Germany' },
@@ -19,7 +18,6 @@ describe('FavoritesContext reducer', () => {
     const nextState = reducer(state, { type: 'ADD', payload: mockCountry });
 
     expect(nextState).toContainEqual(mockCountry);
-    // toContainEqual - глубокое сравнение объектов внутри массива
   });
 
   it('REMOVE - удаляет страну по cca3', () => {
@@ -36,7 +34,6 @@ describe('FavoritesContext reducer', () => {
     const nextState = reducer(state, { type: 'CLEAR_ALL' });
 
     expect(nextState).toHaveLength(0);
-    // toHaveLength - проверяет .length массива
   });
 
   it('Если страна уже в Favorites, дважды она туда не добавится, дубликатов не будет', () => {
