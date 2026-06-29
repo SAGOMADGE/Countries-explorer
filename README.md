@@ -65,6 +65,8 @@ npm test
 
 ---
 
+Страница деталей:
 ![Countries Explorer — страница деталей](./screenshots/details.png)
 
+Страница избранных:
 ![Countries Explorer — страница избранных](./screenshots/favorites.png)
