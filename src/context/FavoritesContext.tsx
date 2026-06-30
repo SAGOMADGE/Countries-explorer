@@ -42,6 +42,11 @@ export function reducer(state: Country[], action: Action): Country[] {
       return state.filter((country) => country.cca3 !== action.payload);
     case 'CLEAR_ALL':
       return [];
+
+    default: {
+      const _exhaustiveCheck: never = action;
+      return _exhaustiveCheck;
+    }
   }
 }
 
