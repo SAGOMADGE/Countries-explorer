@@ -23,7 +23,7 @@ const mockCountry: Country = {
 
 const renderCountryCard = (isFavorite = false) => {
   render(
-    <MemoryRouter>
+    <MemoryRouter initialEntries={['/country']}>
       <FavoritesProvider>
         <CountryCard country={mockCountry} isFavorite={isFavorite} />
       </FavoritesProvider>

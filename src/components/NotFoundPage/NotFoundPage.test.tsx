@@ -6,7 +6,7 @@ import { NotFoundPage } from './NotFoundPage';
 
 const renderNotFoundPage = () => {
   render(
-    <MemoryRouter>
+    <MemoryRouter initialEntries={['/notFoundPage']}>
       <NotFoundPage />
     </MemoryRouter>
   );

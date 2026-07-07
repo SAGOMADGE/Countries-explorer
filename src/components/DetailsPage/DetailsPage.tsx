@@ -9,7 +9,7 @@ import { CountryDetails } from '@/types/countryDetails.types';
 import { useFetch } from '@/hooks/useFetch';
 import { useCallback } from 'react';
 import { useFavoritesContext } from '@/context/FavoritesContext';
-import { ToggleButton } from '../toggleButton/ToggleButton';
+import { ToggleButton } from '../ToggleButton/ToggleButton';
 
 export const DetailsPage = () => {
   const { cca3 } = useParams();

@@ -3,7 +3,7 @@ import style from './CountryCard.module.css';
 import { Link } from 'react-router-dom';
 
 import { Country } from '@/types/country.types';
-import { ToggleButton } from '../toggleButton/ToggleButton';
+import { ToggleButton } from '../ToggleButton/ToggleButton';
 
 interface CountryCardProps {
   country: Country;
