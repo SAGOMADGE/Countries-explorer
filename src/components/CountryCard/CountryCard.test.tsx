@@ -1,71 +1,93 @@
-import React from 'react';
-import { screen } from '@testing-library/react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+
 import { FavoritesProvider } from '@/context/FavoritesContext';
-import { CountryCard } from './CountryCard';
 import { Country } from '@/types/country.types';
+
+import { CountryCard } from './CountryCard';
 
 const mockCountry: Country = {
   cca3: 'DEU',
-  name: { common: 'Germany', official: 'Federal Republic of Germany' },
-  flags: { svg: '', alt: '' },
+  name: {
+    common: 'Germany',
+    official: 'Federal Republic of Germany',
+  },
+  flags: {
+    svg: '/germany.svg',
+    alt: 'Germany flag',
+  },
   capital: ['Berlin'],
   region: 'Europe',
   population: 83000000,
 };
 
-const renderWithProviders = (ui: React.ReactElement) => {
-  return render(
+const renderCountryCard = (isFavorite = false) => {
+  render(
     <MemoryRouter>
-      <FavoritesProvider>{ui}</FavoritesProvider>
+      <FavoritesProvider>
+        <CountryCard country={mockCountry} isFavorite={isFavorite} />
+      </FavoritesProvider>
     </MemoryRouter>
   );
 };
 
 describe('CountryCard', () => {
-  it('отображает значение страны', () => {
-    renderWithProviders(
-      <CountryCard country={mockCountry} isFavorite={false} />
-    );
+  it('отображает основную информацию о стране', () => {
+    renderCountryCard();
 
     expect(screen.getByText('Federal Republic of Germany')).toBeInTheDocument();
-    // toBeInTheDocument - это матчер из jest-dom, проверяет что элемент есть в DOM
+
+    expect(screen.getByText('Столица: Berlin')).toBeInTheDocument();
+
+    expect(screen.getByText('Код страны: DEU')).toBeInTheDocument();
+
+    expect(screen.getByText('Регион: Europe')).toBeInTheDocument();
+
+    expect(
+      screen.getByText('Население 83 000 000 человек')
+    ).toBeInTheDocument();
   });
 
-  it('отображает столицу', () => {
-    renderWithProviders(
-      <CountryCard country={mockCountry} isFavorite={false} />
-    );
+  it('отображает флаг страны', () => {
+    renderCountryCard();
 
-    expect(screen.getByText(/Berlin/)).toBeInTheDocument();
+    const countryFlag = screen.getByRole('img', {
+      name: 'Germany flag',
+    });
+
+    expect(countryFlag).toBeInTheDocument();
+
+    expect(countryFlag).toHaveAttribute('src', '/germany.svg');
   });
 
-  it('отображает кнопку добавления в избранное', () => {
-    renderWithProviders(
-      <CountryCard country={mockCountry} isFavorite={false} />
-    );
+  // Link
+  it('ссылка ведёт на страницу страны', () => {
+    renderCountryCard();
 
-    expect(screen.getByRole('button')).toBeInTheDocument();
+    const countryLink = screen.getByRole('link', {
+      name: /Federal Republic of Germany/i,
+    });
+
+    expect(countryLink).toHaveAttribute('href', '/country/DEU');
   });
 
-  it('текст кнопки при isFavorite = false равен "Добавить в избранное"', () => {
-    renderWithProviders(
-      <CountryCard country={mockCountry} isFavorite={true} />
-    );
+  it('показывает кнопку добавления, если страна не в избранном', () => {
+    renderCountryCard();
 
-    expect(screen.getByRole('button')).toHaveTextContent(
-      'Удалить из избранного'
-    );
+    expect(
+      screen.getByRole('button', {
+        name: /добавить в избранное/i,
+      })
+    ).toBeInTheDocument();
   });
 
-  it('текст кнопки при isFavorite = true показывает "Добавить в избранное" ', () => {
-    renderWithProviders(
-      <CountryCard country={mockCountry} isFavorite={false} />
-    );
+  it('показывает кнопку удаления, если страна находится в избранном', () => {
+    renderCountryCard(true);
 
-    expect(screen.getByRole('button')).toHaveTextContent(
-      'Добавить в избранное'
-    );
+    expect(
+      screen.getByRole('button', {
+        name: /удалить из избранного/i,
+      })
+    ).toBeInTheDocument();
   });
 });
