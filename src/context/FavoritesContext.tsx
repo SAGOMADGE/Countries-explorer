@@ -27,6 +27,7 @@ const init = (initial: Country[]): Country[] => {
   return stored ? JSON.parse(stored) : initial;
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function reducer(state: Country[], action: Action): Country[] {
   switch (action.type) {
     case 'ADD': {

@@ -4,7 +4,7 @@ import { Country } from '@/types/country.types';
 import { Region } from '@/types/region';
 
 import { getAllCountries } from '@/services/countries';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useFavoritesContext } from '@/context/FavoritesContext';
 
@@ -13,11 +13,16 @@ import { normalize } from '@/utils/normalize';
 import { CountryCard } from '../CountryCard/CountryCard';
 
 export const HomePage = () => {
+  const fetchCountries = useCallback(
+    (signal?: AbortSignal) => getAllCountries(signal),
+    []
+  );
+
   const {
     data: countries,
     loading,
     error,
-  } = useFetch<Country[]>((signal) => getAllCountries(signal));
+  } = useFetch<Country[]>(fetchCountries);
 
   const [query, setQuery] = useState('');
 
