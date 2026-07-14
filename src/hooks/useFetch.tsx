@@ -15,7 +15,9 @@ export const useFetch = <T,>(fetcher: (signal?: AbortSignal) => Promise<T>) => {
       try {
         const data = await fetcher(controller.signal);
 
-        if (!data) throw new Error('No Data');
+        if (data === null || data === undefined) {
+          throw new Error('No data');
+        }
 
         setData(data);
       } catch (err) {
