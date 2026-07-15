@@ -1,4 +1,5 @@
 import { Country } from '@/types/country.types';
+import { isCountryArray } from '@/validators/country';
 
 import {
   createContext,
@@ -23,8 +24,19 @@ type FavoritesContextType = {
 const LS_KEY = 'favorites';
 
 const init = (initial: Country[]): Country[] => {
-  const stored = localStorage.getItem(LS_KEY);
-  return stored ? JSON.parse(stored) : initial;
+  try {
+    const stored = localStorage.getItem(LS_KEY);
+
+    if (!stored) {
+      return initial;
+    }
+
+    const parsed: unknown = JSON.parse(stored);
+
+    return isCountryArray(parsed) ? parsed : initial;
+  } catch {
+    return initial;
+  }
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
