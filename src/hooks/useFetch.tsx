@@ -7,6 +7,7 @@ export const useFetch = <T,>(fetcher: (signal?: AbortSignal) => Promise<T>) => {
 
   useEffect(() => {
     const controller = new AbortController();
+    let isActive = true;
 
     const load = async () => {
       setLoading(true);
@@ -31,7 +32,10 @@ export const useFetch = <T,>(fetcher: (signal?: AbortSignal) => Promise<T>) => {
 
     load();
 
-    return () => controller.abort();
+    return () => {
+      isActive = false;
+      controller.abort();
+    };
   }, [fetcher]);
 
   return { data, loading, error };
