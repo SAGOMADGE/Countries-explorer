@@ -2,7 +2,7 @@ import style from './CountryCard.module.css';
 
 import { Link } from 'react-router-dom';
 
-import { Country } from '@/types/country.types';
+import type { Country } from '@/types/country.types';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 
 interface CountryCardProps {
@@ -16,13 +16,18 @@ export const CountryCard = ({ country, isFavorite }: CountryCardProps) => {
       <Link to={`/country/${country.cca3}`}>
         <p>{country.name.official}</p>
 
-        <p>Столица: {country.capital.join(', ')}</p>
+        <p>
+          Столица:{' '}
+          {country.capital.length > 0
+            ? country.capital.join(', ')
+            : 'Нет данных'}
+        </p>
 
         <p>Код страны: {country.cca3}</p>
 
         <img
           src={country.flags.svg}
-          alt={country.flags.alt}
+          alt={country.flags.alt || `Флаг страны ${country.name.official}`}
           className={style.flag}
         />
 
