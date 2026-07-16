@@ -26,7 +26,9 @@ export const useFetch = <T,>(fetcher: (signal?: AbortSignal) => Promise<T>) => {
 
         setError(err instanceof Error ? err.message : 'Unknown error');
       } finally {
-        setLoading(false);
+        if (isActive) {
+          setLoading(false);
+        }
       }
     };
 

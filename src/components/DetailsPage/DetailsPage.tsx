@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import style from './DetailsPage.module.css';
 
@@ -64,20 +64,20 @@ export const DetailsPage = () => {
         ))}
       </section>
 
-      <ul className={style.DetailsList}>
+      <div className={style.DetailsList}>
         <span>Границы: </span>
         {country.borders.map((c) =>
           availableCountryCode.has(c) ? (
-            <NavLink to={`/country/${c}`} key={c} className={style.bordersLink}>
+            <Link to={`/country/${c}`} key={c} className={style.bordersLink}>
               {c}
-            </NavLink>
+            </Link>
           ) : (
             <span key={c} className={style.borderDisabled}>
               {c}
             </span>
           )
         )}
-      </ul>
+      </div>
 
       <ToggleButton isFavorite={isFavorite} country={country} />
     </div>

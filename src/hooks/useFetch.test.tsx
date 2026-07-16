@@ -128,20 +128,4 @@ describe('useFetch', () => {
 
     expect(signal.aborted).toBe(true);
   });
-
-  it('отменяет старый запрос и запускает новый при смене fetcher', () => {
-    const firstFetcher = vi.fn(
-      (_signal?: AbortSignal) => new Promise<string>(() => {})
-    );
-
-    const secondFetcher = vi.fn(
-      (_signal?: AbortSignal) => new Promise<string>(() => {})
-    );
-
-    const { rerender } = renderHook(({ fetcher }) => useFetch(fetcher), {
-      initialProps: {
-        fetcher: firstFetcher,
-      },
-    });
-  });
 });

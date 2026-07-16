@@ -73,5 +73,3 @@ describe('ToggleButton', () => {
     expect(storedFavorites).toEqual([]);
   });
 });
-
-// npm test -- src/components/ToggleButton/ToggleButton.test.tsx

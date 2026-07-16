@@ -9,7 +9,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 export default defineConfig([
   globalIgnores(['dist']),
 
-  // JS / JSX
+  // Общие правила
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     extends: [
@@ -22,34 +22,60 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: {
         ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
+        ecmaFeatures: {
+          jsx: true,
+        },
         sourceType: 'module',
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-unused-vars': [
+        'error',
+        {
+          varsIgnorePattern: '^[A-Z_]',
+          argsIgnorePattern: '^_',
+        },
+      ],
     },
   },
 
-  // TypeScript отдельно
+  // TypeScript
   {
     files: ['**/*.{ts,tsx}'],
+
     languageOptions: {
       parser: tsparser,
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        ecmaFeatures: { jsx: true },
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
+
     plugins: {
       '@typescript-eslint': tseslint,
     },
+
     rules: {
       ...tseslint.configs.recommended.rules,
+
+      // Отключаем обычное JS-правило в TypeScript-файлах
+      'no-unused-vars': 'off',
+
+      // Используем TypeScript-версию
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          varsIgnorePattern: '^_',
+          argsIgnorePattern: '^_',
+        },
+      ],
     },
   },
-  // Vitest globals для тест-файлов
+
+  // Глобальные функции Vitest
   {
     files: ['**/*.{test,spec}.{ts,tsx}'],
     languageOptions: {

@@ -33,7 +33,7 @@ export const HomePage = () => {
 
   if (!countries) return null;
 
-  const filteredCountries = [...countries].filter((country) => {
+  const filteredCountries = countries.filter((country) => {
     const isMatchingSearch =
       normalize(country.name.common).includes(normalize(debounceQuery)) ||
       normalize(country.name.official).includes(normalize(debounceQuery));
