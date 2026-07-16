@@ -1,7 +1,7 @@
 import type { Country } from '@/types/country.types';
 
 const isRecord = (value: unknown): value is Record<string, unknown> => {
-  return typeof value === 'object' && value !== null;
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
 };
 
 export const isCountry = (value: unknown): value is Country => {

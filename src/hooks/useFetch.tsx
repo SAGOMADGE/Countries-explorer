@@ -16,12 +16,16 @@ export const useFetch = <T,>(fetcher: (signal?: AbortSignal) => Promise<T>) => {
       try {
         const data = await fetcher(controller.signal);
 
+        if (!isActive) return;
+
         if (data === null || data === undefined) {
           throw new Error('No data');
         }
 
         setData(data);
       } catch (err) {
+        if (!isActive) return;
+
         if (err instanceof DOMException && err.name === 'AbortError') return;
 
         setError(err instanceof Error ? err.message : 'Unknown error');
